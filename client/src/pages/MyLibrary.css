@@ -1,0 +1,15 @@
+.myLibrary {
+}
+
+.myLibrary__title {
+    padding: 1rem;
+}
+
+.myLibrary__list {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+}

@@ -1,0 +1,48 @@
+.playlistCard {
+    margin-right: 1rem;
+    background: #282828;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 450ms;
+    max-width: 185px;
+}
+
+.playlistCard:hover {
+    transform: scale(1.08);
+}
+
+.playlistCard__image {
+    object-fit: contain;
+    width: 100%;
+    max-height: 150px;
+
+    transition: transform 450ms;
+    margin-bottom: 16px;
+}
+
+.playlistCard__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-transform: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.playlistCard__madeBy {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: -webkit-box;
+    margin-top: 4px;
+    white-space: normal;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+}

@@ -1,0 +1,34 @@
+.login {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__logo {
+  color: white;
+  font-size: 4rem; 
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.1);
+
+  padding: 3rem 0;
+}
+
+
+.login__logo > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__button {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  max-width: 200px;
+  border-radius: 99px;
+  font-weight: 800;
+  background-color: #1db954;
+  margin: 4rem 0;
+}
