@@ -20,7 +20,7 @@ const Playlist = () => {
         console.log('a,', a);
       });
     }
-  }, [id]);
+  }, [id, spotify]);
 
   return (
     <div className="playlist">
