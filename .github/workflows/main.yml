@@ -15,11 +15,15 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: actions/setup-node@master
+      with:
+        node-version: '10.x'
+      env:
+        REACT_APP_REDIRECT_URI: ${{ secrets.REACT_APP_REDIRECT_URI }}
+        REACT_APP_SPOTIFY_CLIENT_ID: ${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }}
+    - run: cd client && yarn install 
+    - run: cd client && yarn run build
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting
-        node-version: '10.x'
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        REACT_APP_REDIRECT_URI: ${{ secrets.REACT_APP_REDIRECT_URI }}
-        REACT_APP_SPOTIFY_CLIENT_ID: ${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }}
