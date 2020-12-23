@@ -14,9 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - uses: actions/setup-node@master
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting
+        node-version: '10.x'
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         REACT_APP_REDIRECT_URI: ${{ secrets.REACT_APP_REDIRECT_URI }}
