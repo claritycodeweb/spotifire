@@ -1,0 +1,12 @@
+.artist {
+    height: 100vh;
+    color: white;
+    overflow-y: overlay;
+    background: linear-gradient( rgb(24, 43, 53), rgb(66 65 68));
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+.artis::-webkit-scrollbar {
+    display: none;
+}

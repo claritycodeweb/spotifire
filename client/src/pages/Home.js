@@ -63,17 +63,19 @@ const Home = () => {
           recentlyPlayed
             .filter((a) => a.album.images.length > 0)
             .map((track) => (
-              <div key={track.id} className="home__topTrack">
-                <img
-                  src={track.album.images[1].url}
-                  alt={track.name}
-                  className="home__topTrackImage"
-                />
-                <p className="home__topTrackTitle">{track.name}</p>
-                <p className="home__topTrackArtist">
-                  {track.album.artists[0].name}
-                </p>
-              </div>
+              <Link to={`/album/${track.album.id}`} key={track.id}>
+                <div key={track.id} className="home__topTrack">
+                  <img
+                    src={track.album.images[1].url}
+                    alt={track.name}
+                    className="home__topTrackImage"
+                  />
+                  <p className="home__topTrackTitle">{track.name}</p>
+                  <p className="home__topTrackArtist">
+                    {track.album.artists[0].name}
+                  </p>
+                </div>
+              </Link>
             ))}
       </div>
 
@@ -105,14 +107,16 @@ const Home = () => {
           topArtists
             .filter((a) => a.images.length > 0)
             .map((artist) => (
-              <div key={artist.id} className="home__topTrack">
-                <img
-                  src={artist.images[1].url}
-                  alt={artist.name}
-                  className="home__topTrackImage"
-                />
-                <p className="home__topTrackTitle">{artist.name}</p>
-              </div>
+              <Link to={`/artist/${artist.id}`} key={artist.id}>
+                <div key={artist.id} className="home__topTrack">
+                  <img
+                    src={artist.images[1].url}
+                    alt={artist.name}
+                    className="home__topTrackImage"
+                  />
+                  <p className="home__topTrackTitle">{artist.name}</p>
+                </div>
+              </Link>
             ))}
       </div>
     </div>

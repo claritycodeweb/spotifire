@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Home from '../pages/Home';
 import MyLibrary from '../pages/MyLibrary';
 import Album from '../pages/Album';
+import Artist from '../pages/Artist';
 
 const Player = () => {
   return (
@@ -17,6 +18,10 @@ const Player = () => {
         <Sidebar />
 
         <Switch>
+          <Route exact path={['/']}>
+            <Home />
+          </Route>
+
           <Route path="/my-library">
             <MyLibrary />
           </Route>
@@ -26,8 +31,12 @@ const Player = () => {
           <Route path="/album/:id">
             <Album />
           </Route>
-          <Route path={['/', '/home']}>
-            <Home />
+          <Route path="/artist/:id">
+            <Artist />
+          </Route>
+
+          <Route>
+            <div>404</div>
           </Route>
         </Switch>
       </div>
