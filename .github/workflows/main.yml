@@ -21,12 +21,13 @@ jobs:
         REACT_APP_REDIRECT_URI: ${{ secrets.REACT_APP_REDIRECT_URI }}
         REACT_APP_SPOTIFY_CLIENT_ID: ${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }}
     - run: cd client && yarn install
-    - run: cd client
+    - run: |
+          cd client
           touch .env.production
           echo REACT_APP_REDIRECT_URI =${{ secrets.REACT_APP_REDIRECT_URI }} >> .env.production
           echo REACT_APP_SPOTIFY_CLIENT_ID =${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }} >> .env.production
           cat .env.production
-    - run: cd client && yarn run build
+    - run: cd client && REACT_APP_REDIRECT_URI =${{ secrets.REACT_APP_REDIRECT_URI }} REACT_APP_SPOTIFY_CLIENT_ID =${{ secrets.REACT_APP_SPOTIFY_CLIENT_ID }} yarn run build
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting
