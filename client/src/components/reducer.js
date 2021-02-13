@@ -12,9 +12,6 @@ export const initialState = {
   recommendation: null,
 
   selectedAlbum: null,
-
-  // token:
-  //   'BQAA-8FqiXawxDrB6uM5M51V5FiPuF4b1iHssjb14Z2Q1ipCUEKXOF6L1lLI_InmSQ0-N_fpkGv1eLoMl087u3AtvRBvkxYAYD2BcNNaqYu1hmVgieLDiIfnGaje5zhrVUjjafhKNRiAqUVyxhhtL4AWVaqJwhBU-3Atvu_W2Ks67QWv',
 };
 
 const reducer = (state, action) => {
@@ -80,6 +77,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         selectedAlbum: action.album,
+      };
+    case 'SET_SELECTED_PLAYLIST':
+      return {
+        ...state,
+        selectedPlaylist: action.playlist,
       };
     default:
       return state;

@@ -5,9 +5,12 @@ import { useStateValue } from '../components/StateProvider';
 import PlaylistCard from '../components/PlaylistCard';
 
 import './MyLibrary.css';
+import { Link } from 'react-router-dom';
 
 const MyLibrary = () => {
   const [{ playlists }] = useStateValue();
+
+  console.log('playlist', playlists);
 
   return (
     <BaseLayout>
@@ -22,7 +25,9 @@ const MyLibrary = () => {
               madeBy: `By ${p.owner.display_name}`,
             }))
             .map((p) => (
-              <PlaylistCard data={p} />
+              <Link to={`/playlist/${p.id}`} key={p.id}>
+                <PlaylistCard data={p} />
+              </Link>
             ))}
         </div>
       </div>

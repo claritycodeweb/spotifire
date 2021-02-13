@@ -10,6 +10,7 @@ import Home from '../pages/Home';
 import MyLibrary from '../pages/MyLibrary';
 import Album from '../pages/Album';
 import Artist from '../pages/Artist';
+import PlaylistTracks from '../pages/PlaylistTracks';
 
 const Player = () => {
   return (
@@ -25,8 +26,11 @@ const Player = () => {
           <Route path="/my-library">
             <MyLibrary />
           </Route>
-          <Route path="/playlist">
+          <Route exact path="/playlist">
             <Playlist />
+          </Route>
+          <Route path="/playlist/:id">
+            <PlaylistTracks />
           </Route>
           <Route path="/album/:id">
             <Album />
