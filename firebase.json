@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "client/build",
+    // "predeploy": ["cd client && yarn run build"],
     "ignore": [
       "firebase.json",
       "**/.*",
