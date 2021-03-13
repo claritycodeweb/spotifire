@@ -4,12 +4,12 @@ import { Switch, Route } from 'react-router-dom';
 
 import { Sidebar } from './Sidebar';
 import './Player.css';
-import Playlist from './Playlist';
 import Footer from './Footer';
 import Home from '../pages/Home';
 import MyLibrary from '../pages/MyLibrary';
 import Album from '../pages/Album';
 import Artist from '../pages/Artist';
+import Search from '../pages/Search';
 import PlaylistTracks from '../pages/PlaylistTracks';
 
 const Player = () => {
@@ -26,8 +26,8 @@ const Player = () => {
           <Route path="/my-library">
             <MyLibrary />
           </Route>
-          <Route exact path="/playlist">
-            <Playlist />
+          <Route exact path="/search">
+            <Search />
           </Route>
           <Route path="/playlist/:id">
             <PlaylistTracks />

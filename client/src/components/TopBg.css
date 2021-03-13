@@ -1,0 +1,11 @@
+.topBg {
+  margin-top: -60px;
+  height: 332px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.6)),to(#121212));
+  background-image: linear-gradient(rgba(0,0,0,.6),#121212);
+  background-color: rgb(152, 128, 72);
+  transition: background 1s ease;
+} 

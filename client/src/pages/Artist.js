@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import BaseLayout from '../components/Layouts/BaseLayout';
 import Loading from '../components/Loading';
 import { useStateValue } from '../components/StateProvider';
 
@@ -29,7 +30,11 @@ const Artist = () => {
     return <Loading />;
   }
 
-  return <div className="artist">under construction</div>;
+  return (
+    <BaseLayout>
+      <div className="artist">under construction</div>
+    </BaseLayout>
+  );
 };
 
 export default Artist;

@@ -14,7 +14,6 @@ const useEventListener = (eventName, handler) => {
 
   useEffect(
     () => {
-      console.log('dupa');
       // Make sure element supports addEventListener
       // On
       const isSupported = window && window.addEventListener;

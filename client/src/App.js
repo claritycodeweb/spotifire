@@ -79,19 +79,12 @@ function App() {
         });
       });
 
-      spotify.getPlaylist('6v3rMJeprV1kQuCcOLZIyM').then((response) => {
-        dispatch({
-          type: 'SET_DISCOVER_WEEKLY',
-          discoverWeekly: response,
-        });
-      });
-
-      spotify.getMyTopArtists().then((response) => {
-        dispatch({
-          type: 'SET_TOP_ARTISTS',
-          top_artists: response.items,
-        });
-      });
+      // spotify.getPlaylist('6v3rMJeprV1kQuCcOLZIyM').then((response) => {
+      //   dispatch({
+      //     type: 'SET_DISCOVER_WEEKLY',
+      //     discoverWeekly: response,
+      //   });
+      // });
 
       dispatch({
         type: 'SET_SPOTIFY',

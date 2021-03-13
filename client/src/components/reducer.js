@@ -15,7 +15,7 @@ export const initialState = {
 };
 
 const reducer = (state, action) => {
-  console.log('DISPATCH', action);
+  // console.log('DISPATCH', action);
 
   switch (action.type) {
     case 'SET_USER':
@@ -66,7 +66,10 @@ const reducer = (state, action) => {
     case 'SET_RECENTLYPLAYED':
       return {
         ...state,
-        recentlyPlayed: action.items.map((i) => i.track),
+        recentlyPlayed: action.items.map((i, index) => ({
+          ...i.track,
+          id: index,
+        })),
       };
     case 'SET_RECOMMENDATION':
       return {
@@ -82,6 +85,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         selectedPlaylist: action.playlist,
+      };
+    case 'SET_SEARCH_DATA':
+      return {
+        ...state,
+        searchData: action.search,
       };
     default:
       return state;

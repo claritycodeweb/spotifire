@@ -1,11 +1,12 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
+    align-items: center;
 }
 
 .header__left {
-    flex: 0.5;
+    flex: 3; 
     min-width: 70px;
     background-color: white;
     color: gray;
@@ -27,6 +28,8 @@
 .header__right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    flex: 3;
 }
 
 .header__right>h4 {
@@ -36,4 +39,23 @@
 .header__avatar {
     width: 100%;
     height: 100%;
+}
+
+.header__history {
+}
+
+.header__historyButton {
+    border: none;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: rgb(48 42 26);
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin-right: 16px;
+    outline: none;
 }

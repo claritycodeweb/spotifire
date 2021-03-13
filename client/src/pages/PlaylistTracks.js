@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { useStateValue } from '../components/StateProvider';
 import SongsContainer from '../components/SongsContainer';
+import BaseLayout from '../components/Layouts/BaseLayout';
 
 const PlaylistTracks = () => {
   let { id } = useParams();
@@ -31,10 +32,12 @@ const PlaylistTracks = () => {
   console.log('selectedPlaylist', selectedPlaylist);
 
   return (
-    <SongsContainer
-      album={selectedPlaylist}
-      tracks={selectedPlaylist.tracks.items.map((i) => i.track)}
-    />
+    <BaseLayout>
+      <SongsContainer
+        album={selectedPlaylist}
+        tracks={selectedPlaylist.tracks.items.map((i) => i.track)}
+      />
+    </BaseLayout>
   );
 };
 

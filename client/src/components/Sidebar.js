@@ -24,7 +24,7 @@ export const Sidebar = () => {
         alt=""
       ></img> */}
       <SidebarOption Icon={HomeIcon} title="Home" to="/" />
-      <SidebarOption Icon={SearchIcon} title="Search" to="/playlist" />
+      <SidebarOption Icon={SearchIcon} title="Search" to="/search" />
       <SidebarOption
         Icon={LibraryMusicIcon}
         title="Your Library"

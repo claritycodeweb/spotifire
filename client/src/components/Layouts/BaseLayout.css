@@ -5,7 +5,13 @@
     height: 100vh;
     color: white;
     overflow-y: overlay;
-    padding-bottom: 8rem;;
+    padding-bottom: 6rem;
+    position: relative;
+    z-index: 0;
+}
+
+.baseLayout--light {
+    background: linear-gradient(rgb(24, 43, 53) 20%, rgb(66 65 68) 100%);
 }
 
 .baseLayout::-webkit-scrollbar {
@@ -15,10 +21,19 @@
 .baseLayout__header {
     position: sticky;
     top: 0;
-    height: 70px;
-    background: #282828;
+    height: 60px;
+    /* background: #282828; */
     display: flex;
     align-items: center;
     padding: 0 1rem;
     z-index: 10;
+    transition: all 300ms ease-in;
+}
+
+.baseLayout__header--light {
+    background: transparent;
+}
+
+.baseLayout__header--dark {
+    background: #070707;
 }
