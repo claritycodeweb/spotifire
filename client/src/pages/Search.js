@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Loading from '../components/Loading';
+import React from 'react';
 import { useStateValue } from '../components/StateProvider';
 
 import './Search.css';
@@ -7,22 +6,7 @@ import BaseLayout from '../components/Layouts/BaseLayout';
 import MusicBoxItem from '../components/MusicBoxItem';
 
 const Search = () => {
-  const [query, setQuery] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [{ searchData, spotify }, dispatch] = useStateValue();
-
-  useEffect(() => {
-    // if (query) {
-    //   spotify.search(query, ['artist', 'albums']).then((resp) => {
-    //     console.log('resp', resp);
-    //     dispatch({
-    //       type: 'SET_SEARCH_DATA',
-    //       search: resp,
-    //     });
-    //     setIsLoading(false);
-    //   });
-    // }
-  }, [spotify, query, dispatch]);
+  const [{ searchData }] = useStateValue();
 
   if (!searchData) {
     return (
