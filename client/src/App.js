@@ -39,9 +39,9 @@ const getToken = () => {
     return _newToken;
   } else {
     const _oldToken = getJwtToken();
-    const _oldExpresIn = getExpiration();
+    const _oldExpiresIn = getExpiration();
 
-    if (_oldExpresIn < Math.floor(new Date().getTime() / 1000)) {
+    if (_oldExpiresIn < Math.floor(new Date().getTime() / 1000)) {
       localStorage.removeItem(keyExpires);
       localStorage.removeItem(keyToken);
       return null;
@@ -78,13 +78,6 @@ function App() {
           playlists,
         });
       });
-
-      // spotify.getPlaylist('6v3rMJeprV1kQuCcOLZIyM').then((response) => {
-      //   dispatch({
-      //     type: 'SET_DISCOVER_WEEKLY',
-      //     discoverWeekly: response,
-      //   });
-      // });
 
       dispatch({
         type: 'SET_SPOTIFY',
